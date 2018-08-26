@@ -102,7 +102,7 @@ actionSNA <- function(docs)
 keywordsSNA <- function(docs, support=0.1, confidence=0.8)
 {
   library(RHINO)
-  initRhino() 					# RHINO 시동
+  #initRhino() 					# RHINO 시동
 
   noun <- lapply(docs, getMorph, "noun")
   nounVec <- unlist(noun)		   	    # 벡터 타입으로 변환
