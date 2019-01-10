@@ -94,12 +94,13 @@ actionSNA <- function(docs)
 #' @param docs vector, split by enter
 #' @param support minimum support
 #' @param confidence minimum confidence
+#' @param keyNum keywords number to extract
 #' @return rules
 #' @export
 #' @examples
-#' keywordsSNA(docs = docs, support=0.1, confidence=0.8)
+#' keywordsSNA(docs = docs, support=0.1, confidence=0.8, keyNum=20)
 
-keywordsSNA <- function(docs, support=0.1, confidence=0.8)
+keywordsSNA <- function(docs, support=0.1, confidence=0.8, keyNum=20)
 {
   library(RHINO)
   #initRhino() 					# RHINO 시동
@@ -107,7 +108,7 @@ keywordsSNA <- function(docs, support=0.1, confidence=0.8)
   noun <- lapply(docs, getMorph, "noun")
   nounVec <- unlist(noun)		   	    # 벡터 타입으로 변환
   nounFreq <- table(nounVec)	   		# 빈도표로 변환
-  keywords <- names(head(sort(nounFreq, decreasing = T), 20))
+  keywords <- names(head(sort(nounFreq, decreasing = T), keyNum))
 
   docs.df <- as.data.frame(docs)    # 문서를 데이터프레임으로 변환
 

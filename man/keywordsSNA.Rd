@@ -4,7 +4,7 @@
 \alias{keywordsSNA}
 \title{keywordsSNA}
 \usage{
-keywordsSNA(docs, support = 0.1, confidence = 0.8)
+keywordsSNA(docs, support = 0.1, confidence = 0.8, keyNum = 20)
 }
 \arguments{
 \item{docs}{vector, split by enter}
@@ -12,6 +12,8 @@ keywordsSNA(docs, support = 0.1, confidence = 0.8)
 \item{support}{minimum support}
 
 \item{confidence}{minimum confidence}
+
+\item{keyNum}{keywords number to extract}
 }
 \value{
 rules
@@ -20,5 +22,5 @@ rules
 Analyse SNA by keywords
 }
 \examples{
-keywordsSNA(docs = docs, support=0.1, confidence=0.8)
+keywordsSNA(docs = docs, support=0.1, confidence=0.8, keyNum=20)
 }
